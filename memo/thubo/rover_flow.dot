@@ -1,0 +1,32 @@
+
+digraph rover_flow {
+	graph [charset="UTF-8", ranksep=0.0];
+	 n1[label="Begin",shape=ellipse];
+	 n2[label="Turn on the spot",shape=box];
+	 n3[label="Find the aim",shape=diamond];
+	 n4[label="stop",shape=box];
+	 n5[label="Gain headway",shape=box];
+	 ns1[label="Can't advance",shape=diamond]; // If I have spear feerings
+	 ns2[label="Go down dradually",shape=box];
+	 ns3[label="Turn a bit on the spot",shape=box];
+	 n6[label="Arrive near the aime",shape=diamond];
+	 n7[label="Stop",shape=box];
+	 ns[label="Put on the LED",shape=box]; // If I have spear feerings
+	 n8[label="End",shape=ellipse];
+
+	 n1 -> n2;
+	 n2 -> n3;
+	 n3 -> n2;
+	 n3 -> n4;
+	 n4 -> n5;
+	 n5 -> ns1;
+	 ns1 -> n5;
+	 ns1 -> ns2;
+	 ns2 -> ns3;
+	 ns3 -> n5;
+	 n5 -> n6;
+	 n6 -> n5;
+	 n6 -> n7;
+	 n7 -> ns;
+	 ns -> n8;
+}
