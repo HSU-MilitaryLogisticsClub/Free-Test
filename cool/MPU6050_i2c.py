@@ -11,7 +11,7 @@ def i2cGetWord_HMC5883L(addr):
 	return (out[4]+out[5]+out[2]+out[3])
 
 
-#MPU6050
+#MPU60502
 def accel_X():
 	return i2cGetWord("0x3B")
 
